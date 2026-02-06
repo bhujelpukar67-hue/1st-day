@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day My Love 🌹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffb6c1, #ffe4e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      color: #5a1a2e;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 380px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .bouquet {
+      font-size: 70px;
+      margin: 20px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .letter {
+      font-size: 42px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+
+    .message {
+      display: none;
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.6;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .rose {
+      position: absolute;
+      top: -50px;
+      font-size: 22px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌹 Happy Rose Day, My Love 🌹</h1>
+
+    <div class="bouquet">
+      🌹🌷💐🌷🌹
+    </div>
+
+    <div class="letter" onclick="openLetter()">✉️</div>
+
+    <div class="message" id="loveMessage">
+      <p>
+        Even though I am far away,<br>
+        even though we are in a long-distance relationship,<br>
+        and even though I don’t have much budget<br>
+        to celebrate Valentine’s week…
+      </p>
+      <p>
+        Please accept this small digital bouquet 🌹💐<br>
+        as a symbol of my love, effort, and heart.
+      </p>
+      <p>
+        I love youuuuu sanuuu ❤️<br>
+        Always and forever.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("loveMessage").style.display = "block";
+    }
+
+    // Falling roses animation
+    for (let i = 0; i < 18; i++) {
+      let rose = document.createElement("div");
+      rose.className = "rose";
+      rose.innerHTML = "🌹";
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (4 + Math.random() * 5) + "s";
+      rose.style.fontSize = (16 + Math.random() * 20) + "px";
+      document.body.appendChild(rose);
+    }
+  </script>
+
+</body>
+</html>
